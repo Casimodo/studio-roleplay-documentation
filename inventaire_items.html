@@ -1,0 +1,1859 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Inventaire Items</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 40px;
+    background-color: #f9f9f9;
+  }
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  #searchInput {
+    width: 300px;
+    padding: 8px;
+    margin-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+  th, td {
+    text-align: left;
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+  }
+  th {
+    background-color: #007BFF;
+    color: white;
+  }
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  tr:hover {
+    background-color: #e9e9e9;
+  }
+  img {
+    height: 40px;
+  }
+</style>
+<script>
+  function filterTable() {
+    var input = document.getElementById("searchInput");
+    var filter = input.value.toLowerCase();
+    var rows = document.querySelectorAll("tbody tr");
+
+    rows.forEach(function(row) {
+      var text = row.textContent.toLowerCase();
+      row.style.display = text.includes(filter) ? "" : "none";
+    });
+  }
+</script>
+</head>
+<body>
+<h1>Inventaire Items</h1>
+<input type="text" id="searchInput" onkeyup="filterTable()" placeholder="Rechercher dans le tableau..." />
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th>Clé</th>
+      <th>Label</th>
+      <th>Poids (g)</th>
+      <th>Stackable</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/testburger.png?raw=true" style="height:60px;" /></td>
+      <td>testburger</td>
+      <td>Test Burger</td>
+      <td>220</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/farm_fertilizer.png?raw=true" style="height:60px;" /></td>
+      <td>farm_fertilizer</td>
+      <td>Fertilisant Agricole</td>
+      <td>20000</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/watering_can.png?raw=true" style="height:60px;" /></td>
+      <td>watering_can</td>
+      <td>Arrosoir Vide</td>
+      <td>1000</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/watering_can_full.png?raw=true" style="height:60px;" /></td>
+      <td>watering_can_full</td>
+      <td>Arrosoir Plein</td>
+      <td>5000</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/workbench.png?raw=true" style="height:60px;" /></td>
+      <td>workbench</td>
+      <td>Établi</td>
+      <td>5000</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/knife_cook.png?raw=true" style="height:60px;" /></td>
+      <td>knife_cook</td>
+      <td>Couteau de cuisine</td>
+      <td>250</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/bandage.png?raw=true" style="height:60px;" /></td>
+      <td>bandage</td>
+      <td>Bandage</td>
+      <td>115</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/black_money.png?raw=true" style="height:60px;" /></td>
+      <td>black_money</td>
+      <td>Argent liquide</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/burger.png?raw=true" style="height:60px;" /></td>
+      <td>burger</td>
+      <td>Burger</td>
+      <td>220</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/sprunk.png?raw=true" style="height:60px;" /></td>
+      <td>sprunk</td>
+      <td>Sprunk</td>
+      <td>350</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/cocacola.png?raw=true" style="height:60px;" /></td>
+      <td>cocacola</td>
+      <td>Cola</td>
+      <td>350</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/cokezero.png?raw=true" style="height:60px;" /></td>
+      <td>cokezero</td>
+      <td>Cola-Zero</td>
+      <td>350</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/parachute.png?raw=true" style="height:60px;" /></td>
+      <td>parachute</td>
+      <td>Parachute</td>
+      <td>8000</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/garbage.png?raw=true" style="height:60px;" /></td>
+      <td>garbage</td>
+      <td>Garbage</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/paperbag.png?raw=true" style="height:60px;" /></td>
+      <td>paperbag</td>
+      <td>Paper Bag</td>
+      <td>1</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/identification.png?raw=true" style="height:60px;" /></td>
+      <td>identification</td>
+      <td>Identité</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/marche_card.png?raw=true" style="height:60px;" /></td>
+      <td>marche_card</td>
+      <td>Carte marché noir 30mn</td>
+      <td>50</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/panties.png?raw=true" style="height:60px;" /></td>
+      <td>panties</td>
+      <td>Knickers</td>
+      <td>10</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/laptop.png?raw=true" style="height:60px;" /></td>
+      <td>laptop</td>
+      <td>laptop</td>
+      <td>160</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/phone.png?raw=true" style="height:60px;" /></td>
+      <td>phone</td>
+      <td>Phone</td>
+      <td>190</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/money.png?raw=true" style="height:60px;" /></td>
+      <td>money</td>
+      <td>Argent liquide</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/mustard.png?raw=true" style="height:60px;" /></td>
+      <td>mustard</td>
+      <td>Mustard</td>
+      <td>500</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/water.png?raw=true" style="height:60px;" /></td>
+      <td>water</td>
+      <td>Bouteille d\</td>
+      <td>500</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/armour.png?raw=true" style="height:60px;" /></td>
+      <td>armour</td>
+      <td>Bulletproof Vest</td>
+      <td>3000</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/clothing.png?raw=true" style="height:60px;" /></td>
+      <td>clothing</td>
+      <td>Clothing</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/mastercard.png?raw=true" style="height:60px;" /></td>
+      <td>mastercard</td>
+      <td>Fleeca Card</td>
+      <td>10</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/scrapmetal.png?raw=true" style="height:60px;" /></td>
+      <td>scrapmetal</td>
+      <td>Scrap Metal</td>
+      <td>80</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/radio.png?raw=true" style="height:60px;" /></td>
+      <td>radio</td>
+      <td>Radio</td>
+      <td>100</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/radio_blue.png?raw=true" style="height:60px;" /></td>
+      <td>radio_blue</td>
+      <td>Radio Bleue</td>
+      <td>100</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/radio_green.png?raw=true" style="height:60px;" /></td>
+      <td>radio_green</td>
+      <td>Radio Verte</td>
+      <td>100</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/radio_grey.png?raw=true" style="height:60px;" /></td>
+      <td>radio_grey</td>
+      <td>Radio Grise</td>
+      <td>100</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/radio_pink.png?raw=true" style="height:60px;" /></td>
+      <td>radio_pink</td>
+      <td>Radio Rose</td>
+      <td>100</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/radio_yellow.png?raw=true" style="height:60px;" /></td>
+      <td>radio_yellow</td>
+      <td>Radio Jaune</td>
+      <td>100</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/radioscanner.png?raw=true" style="height:60px;" /></td>
+      <td>radioscanner</td>
+      <td>Scanner Radio</td>
+      <td>100</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/skateboard.png?raw=true" style="height:60px;" /></td>
+      <td>skateboard</td>
+      <td>Skatebord</td>
+      <td>2000</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/surf.png?raw=true" style="height:60px;" /></td>
+      <td>surf</td>
+      <td>Surf</td>
+      <td>5000</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/mdt.png?raw=true" style="height:60px;" /></td>
+      <td>mdt</td>
+      <td>MDT</td>
+      <td>500</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/camera_pd.png?raw=true" style="height:60px;" /></td>
+      <td>camera_pd</td>
+      <td>Caméra PD</td>
+      <td>3000</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/camera_ems.png?raw=true" style="height:60px;" /></td>
+      <td>camera_ems</td>
+      <td>Caméra EMS</td>
+      <td>3000</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/camera_citizen.png?raw=true" style="height:60px;" /></td>
+      <td>camera_citizen</td>
+      <td>Caméra</td>
+      <td>3000</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/camera_viewer.png?raw=true" style="height:60px;" /></td>
+      <td>camera_viewer</td>
+      <td>Visionneuse de Caméra</td>
+      <td>1000</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/camera_paper.png?raw=true" style="height:60px;" /></td>
+      <td>camera_paper</td>
+      <td>Papier de Signal Caméra</td>
+      <td>200</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/camera_tablet.png?raw=true" style="height:60px;" /></td>
+      <td>camera_tablet</td>
+      <td>Tablette CamView</td>
+      <td>2000</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/camera_personal.png?raw=true" style="height:60px;" /></td>
+      <td>camera_personal</td>
+      <td>Caméra Personnelle</td>
+      <td>3000</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/camera_personaltablet.png?raw=true" style="height:60px;" /></td>
+      <td>camera_personaltablet</td>
+      <td>Tablette CamView Personnelle</td>
+      <td>2000</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/vpn.png?raw=true" style="height:60px;" /></td>
+      <td>vpn</td>
+      <td>Routeur VPN</td>
+      <td>1000</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/outfitbag.png?raw=true" style="height:60px;" /></td>
+      <td>outfitbag</td>
+      <td>Sac à vetement</td>
+      <td>220</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/backpack.png?raw=true" style="height:60px;" /></td>
+      <td>backpack</td>
+      <td>sac à dos</td>
+      <td>220</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/cocaine_powder.png?raw=true" style="height:60px;" /></td>
+      <td>cocaine_powder</td>
+      <td>Cocaïne en Poudre</td>
+      <td>100</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/baking_soda.png?raw=true" style="height:60px;" /></td>
+      <td>baking_soda</td>
+      <td>Bicarbonate de Soude</td>
+      <td>50</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/acid.png?raw=true" style="height:60px;" /></td>
+      <td>acid</td>
+      <td>Acide</td>
+      <td>75</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/cigarette.png?raw=true" style="height:60px;" /></td>
+      <td>cigarette</td>
+      <td>cigarette</td>
+      <td>75</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/joint.png?raw=true" style="height:60px;" /></td>
+      <td>joint</td>
+      <td>joint</td>
+      <td>75</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/crack.png?raw=true" style="height:60px;" /></td>
+      <td>crack</td>
+      <td>Crack</td>
+      <td>150</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/outfit_cloth.png?raw=true" style="height:60px;" /></td>
+      <td>outfit_cloth</td>
+      <td>Tenue</td>
+      <td>100</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/cloth_torso.png?raw=true" style="height:60px;" /></td>
+      <td>cloth_torso</td>
+      <td>Veste</td>
+      <td>0</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/cloth_tshirt.png?raw=true" style="height:60px;" /></td>
+      <td>cloth_tshirt</td>
+      <td>T-Shirt</td>
+      <td>0</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/cloth_arms.png?raw=true" style="height:60px;" /></td>
+      <td>cloth_arms</td>
+      <td>Bras</td>
+      <td>0</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/cloth_pants.png?raw=true" style="height:60px;" /></td>
+      <td>cloth_pants</td>
+      <td>Pantalon</td>
+      <td>0</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/cloth_shoes.png?raw=true" style="height:60px;" /></td>
+      <td>cloth_shoes</td>
+      <td>Chaussures</td>
+      <td>0</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/cloth_decals.png?raw=true" style="height:60px;" /></td>
+      <td>cloth_decals</td>
+      <td>Calques</td>
+      <td>0</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/cloth_ears.png?raw=true" style="height:60px;" /></td>
+      <td>cloth_ears</td>
+      <td>Boucle d</td>
+      <td>0</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/cloth_mask.png?raw=true" style="height:60px;" /></td>
+      <td>cloth_mask</td>
+      <td>Masque</td>
+      <td>0</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/cloth_bproof.png?raw=true" style="height:60px;" /></td>
+      <td>cloth_bproof</td>
+      <td>Gilet Par Balle</td>
+      <td>0</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/cloth_chain.png?raw=true" style="height:60px;" /></td>
+      <td>cloth_chain</td>
+      <td>Collier</td>
+      <td>0</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/cloth_bags.png?raw=true" style="height:60px;" /></td>
+      <td>cloth_bags</td>
+      <td>Sac</td>
+      <td>0</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/cloth_glasses.png?raw=true" style="height:60px;" /></td>
+      <td>cloth_glasses</td>
+      <td>Lunettes</td>
+      <td>0</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/cloth_watches.png?raw=true" style="height:60px;" /></td>
+      <td>cloth_watches</td>
+      <td>Montre</td>
+      <td>0</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/cloth_bracelets.png?raw=true" style="height:60px;" /></td>
+      <td>cloth_bracelets</td>
+      <td>Bracelet</td>
+      <td>0</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/cloth_helmet.png?raw=true" style="height:60px;" /></td>
+      <td>cloth_helmet</td>
+      <td>Chapeaux</td>
+      <td>0</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/dh_test.png?raw=true" style="height:60px;" /></td>
+      <td>dh_test</td>
+      <td>DEVHUB TEST</td>
+      <td>1</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/id.png?raw=true" style="height:60px;" /></td>
+      <td>id</td>
+      <td>Carte d\</td>
+      <td>50</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/fake_id.png?raw=true" style="height:60px;" /></td>
+      <td>fake_id</td>
+      <td>Carte d\</td>
+      <td>50</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/license_fishing.png?raw=true" style="height:60px;" /></td>
+      <td>license_fishing</td>
+      <td>Permis de Pêche</td>
+      <td>100</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/license_hunting.png?raw=true" style="height:60px;" /></td>
+      <td>license_hunting</td>
+      <td>Permis de Chasse</td>
+      <td>100</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/license_marijuana_use.png?raw=true" style="height:60px;" /></td>
+      <td>license_marijuana_use</td>
+      <td>Carte d\</td>
+      <td>100</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/license_marijuana_grow.png?raw=true" style="height:60px;" /></td>
+      <td>license_marijuana_grow</td>
+      <td>Permis de Culture de Marijuana</td>
+      <td>100</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/license_pilot.png?raw=true" style="height:60px;" /></td>
+      <td>license_pilot</td>
+      <td>Licence de Pilote</td>
+      <td>100</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/weapon.png?raw=true" style="height:60px;" /></td>
+      <td>weapon</td>
+      <td>Permis de port d\</td>
+      <td>50</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/medic.png?raw=true" style="height:60px;" /></td>
+      <td>medic</td>
+      <td>Certificat Medical</td>
+      <td>50</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/drivers.png?raw=true" style="height:60px;" /></td>
+      <td>drivers</td>
+      <td>Permis de Conduire</td>
+      <td>50</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/plate.png?raw=true" style="height:60px;" /></td>
+      <td>plate</td>
+      <td>Plate</td>
+      <td>100</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/carlockpick.png?raw=true" style="height:60px;" /></td>
+      <td>carlockpick</td>
+      <td>Lockpick</td>
+      <td>100</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/lockpick.png?raw=true" style="height:60px;" /></td>
+      <td>lockpick</td>
+      <td>Lockpick</td>
+      <td>160</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/caradvancedlockpick.png?raw=true" style="height:60px;" /></td>
+      <td>caradvancedlockpick</td>
+      <td>Advanced Lockpick</td>
+      <td>100</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/vehiclegps.png?raw=true" style="height:60px;" /></td>
+      <td>vehiclegps</td>
+      <td>Vehicle GPS</td>
+      <td>100</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/vehicletracker.png?raw=true" style="height:60px;" /></td>
+      <td>vehicletracker</td>
+      <td>Vehicle Tracker</td>
+      <td>100</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/10kgoldchain_recel.png?raw=true" style="height:60px;" /></td>
+      <td>10kgoldchain_recel</td>
+      <td>Chaine en Or de 10k</td>
+      <td>250</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/chain_recel.png?raw=true" style="height:60px;" /></td>
+      <td>chain_recel</td>
+      <td>Petite chaine en Or</td>
+      <td>120</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/gold_earring_recel.png?raw=true" style="height:60px;" /></td>
+      <td>gold_earring_recel</td>
+      <td>Boucle d</td>
+      <td>80</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/diamond_ring_recel.png?raw=true" style="height:60px;" /></td>
+      <td>diamond_ring_recel</td>
+      <td>Bague en Diamant</td>
+      <td>80</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/goldchain_recel.png?raw=true" style="height:60px;" /></td>
+      <td>goldchain_recel</td>
+      <td>Chaine en Or</td>
+      <td>180</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/instant_camera.png?raw=true" style="height:60px;" /></td>
+      <td>instant_camera</td>
+      <td>Instant Camera</td>
+      <td>200</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/photo.png?raw=true" style="height:60px;" /></td>
+      <td>photo</td>
+      <td>Photo</td>
+      <td>200</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/report_evidence.png?raw=true" style="height:60px;" /></td>
+      <td>report_evidence</td>
+      <td>Report Evidence</td>
+      <td>200</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/k9.png?raw=true" style="height:60px;" /></td>
+      <td>k9</td>
+      <td>K9 Whistle</td>
+      <td>200</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/lspd_badge.png?raw=true" style="height:60px;" /></td>
+      <td>lspd_badge</td>
+      <td>LSPD Badge</td>
+      <td>200</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/bcsd_badge.png?raw=true" style="height:60px;" /></td>
+      <td>bcsd_badge</td>
+      <td>BCSD Badge</td>
+      <td>200</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/fib_badge.png?raw=true" style="height:60px;" /></td>
+      <td>fib_badge</td>
+      <td>FIB Badge</td>
+      <td>200</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/police_cad.png?raw=true" style="height:60px;" /></td>
+      <td>police_cad</td>
+      <td>Police tablet</td>
+      <td>200</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/evidence_a.png?raw=true" style="height:60px;" /></td>
+      <td>evidence_a</td>
+      <td>Preuve de</td>
+      <td>10</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/evidence_az.png?raw=true" style="height:60px;" /></td>
+      <td>evidence_az</td>
+      <td>Preuve</td>
+      <td>10</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/evidence_b.png?raw=true" style="height:60px;" /></td>
+      <td>evidence_b</td>
+      <td>Preuve véhicule</td>
+      <td>10</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/evidence_n.png?raw=true" style="height:60px;" /></td>
+      <td>evidence_n</td>
+      <td>Preuves d</td>
+      <td>10</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/evidence_ne.png?raw=true" style="height:60px;" /></td>
+      <td>evidence_ne</td>
+      <td>Preuve d</td>
+      <td>10</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/evidence_r.png?raw=true" style="height:60px;" /></td>
+      <td>evidence_r</td>
+      <td>Preuve de sang</td>
+      <td>10</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/evidence_ro.png?raw=true" style="height:60px;" /></td>
+      <td>evidence_ro</td>
+      <td>Preuve</td>
+      <td>10</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/evidence_v.png?raw=true" style="height:60px;" /></td>
+      <td>evidence_v</td>
+      <td>Preuves sur les drogues</td>
+      <td>10</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/megaphone.png?raw=true" style="height:60px;" /></td>
+      <td>megaphone</td>
+      <td>Megaphone</td>
+      <td>10</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/transplant_cooler.png?raw=true" style="height:60px;" /></td>
+      <td>transplant_cooler</td>
+      <td>Refroidisseur de transplantation</td>
+      <td>10000</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/hack_zero.png?raw=true" style="height:60px;" /></td>
+      <td>hack_zero</td>
+      <td>H4ck z3r0</td>
+      <td>1000</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/magic_dust.png?raw=true" style="height:60px;" /></td>
+      <td>magic_dust</td>
+      <td>Anesthésiant</td>
+      <td>1000</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/scalpel.png?raw=true" style="height:60px;" /></td>
+      <td>scalpel</td>
+      <td>Scalpel chirurgical</td>
+      <td>1000</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/bonesaw.png?raw=true" style="height:60px;" /></td>
+      <td>bonesaw</td>
+      <td>Scie chirurgicale</td>
+      <td>2000</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/cocaine.png?raw=true" style="height:60px;" /></td>
+      <td>cocaine</td>
+      <td>Cocaïne en Feuille</td>
+      <td>100</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/chemicals.png?raw=true" style="height:60px;" /></td>
+      <td>chemicals</td>
+      <td>Un produit étrange</td>
+      <td>100</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/cocaine_cut.png?raw=true" style="height:60px;" /></td>
+      <td>cocaine_cut</td>
+      <td>Cocaïne Coupée</td>
+      <td>100</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/cocaine_packaged.png?raw=true" style="height:60px;" /></td>
+      <td>cocaine_packaged</td>
+      <td>Cocaïne Emballée</td>
+      <td>100</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/meth.png?raw=true" style="height:60px;" /></td>
+      <td>meth</td>
+      <td>Methamphétamine</td>
+      <td>100</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/meth_packaged.png?raw=true" style="height:60px;" /></td>
+      <td>meth_packaged</td>
+      <td>Methamphétamine Emballée</td>
+      <td>100</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/package_money.png?raw=true" style="height:60px;" /></td>
+      <td>package_money</td>
+      <td>Argent Emballé</td>
+      <td>100</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/sorted_money.png?raw=true" style="height:60px;" /></td>
+      <td>sorted_money</td>
+      <td>Argent Trié</td>
+      <td>100</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/weed.png?raw=true" style="height:60px;" /></td>
+      <td>weed</td>
+      <td>Weed en Feuille</td>
+      <td>100</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/weed_packaged.png?raw=true" style="height:60px;" /></td>
+      <td>weed_packaged</td>
+      <td>Weed Emballée</td>
+      <td>100</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/playerbooth.png?raw=true" style="height:60px;" /></td>
+      <td>playerbooth</td>
+      <td>Market Booth Stall</td>
+      <td>0</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/cola.png?raw=true" style="height:60px;" /></td>
+      <td>cola</td>
+      <td>Cola</td>
+      <td>50</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/tomatosauce.png?raw=true" style="height:60px;" /></td>
+      <td>tomatosauce</td>
+      <td>Sauce Tomate</td>
+      <td>50</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/burgerpatty.png?raw=true" style="height:60px;" /></td>
+      <td>burgerpatty</td>
+      <td>Steack haché</td>
+      <td>50</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/taco.png?raw=true" style="height:60px;" /></td>
+      <td>taco</td>
+      <td>Taco</td>
+      <td>50</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/tacoshells.png?raw=true" style="height:60px;" /></td>
+      <td>tacoshells</td>
+      <td>Galette Taco</td>
+      <td>50</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/ground_beef.png?raw=true" style="height:60px;" /></td>
+      <td>ground_beef</td>
+      <td>Boeuf Haché</td>
+      <td>50</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/lime.png?raw=true" style="height:60px;" /></td>
+      <td>lime</td>
+      <td>Lime</td>
+      <td>80</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/mayonaise.png?raw=true" style="height:60px;" /></td>
+      <td>mayonaise</td>
+      <td>Mayonaise</td>
+      <td>50</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/martini.png?raw=true" style="height:60px;" /></td>
+      <td>martini</td>
+      <td>Martini</td>
+      <td>50</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/meat_chicken.png?raw=true" style="height:60px;" /></td>
+      <td>meat_chicken</td>
+      <td>Blanc de Poulet</td>
+      <td>50</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/rawbacon.png?raw=true" style="height:60px;" /></td>
+      <td>rawbacon</td>
+      <td>Bacon</td>
+      <td>50</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/beef.png?raw=true" style="height:60px;" /></td>
+      <td>beef</td>
+      <td>Boeuf</td>
+      <td>50</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/tacosauce.png?raw=true" style="height:60px;" /></td>
+      <td>tacosauce</td>
+      <td>Sauce Tacos</td>
+      <td>50</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/coffee.png?raw=true" style="height:60px;" /></td>
+      <td>coffee</td>
+      <td>Café</td>
+      <td>50</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/hotsauce.png?raw=true" style="height:60px;" /></td>
+      <td>hotsauce</td>
+      <td>Sauce Piquante</td>
+      <td>50</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/item.png?raw=true" style="height:60px;" /></td>
+      <td>item</td>
+      <td>Default Item</td>
+      <td>50</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/rawsausage.png?raw=true" style="height:60px;" /></td>
+      <td>rawsausage</td>
+      <td>Saucisse Cru</td>
+      <td>600</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/cheese.png?raw=true" style="height:60px;" /></td>
+      <td>cheese</td>
+      <td>Fromage Burger</td>
+      <td>50</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/sandwich.png?raw=true" style="height:60px;" /></td>
+      <td>sandwich</td>
+      <td>Sandwich</td>
+      <td>50</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/lighter.png?raw=true" style="height:60px;" /></td>
+      <td>lighter</td>
+      <td>Briquet</td>
+      <td>50</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/garden_shovel.png?raw=true" style="height:60px;" /></td>
+      <td>garden_shovel</td>
+      <td>Petite Pelle de Jardinage</td>
+      <td>50</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/garden_pitcher.png?raw=true" style="height:60px;" /></td>
+      <td>garden_pitcher</td>
+      <td>Arrosoire</td>
+      <td>50</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/lettuce.png?raw=true" style="height:60px;" /></td>
+      <td>lettuce</td>
+      <td>Feuille de Laitue</td>
+      <td>200</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/lettuce_uncut.png?raw=true" style="height:60px;" /></td>
+      <td>lettuce_uncut</td>
+      <td>Laitue</td>
+      <td>200</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/milk.png?raw=true" style="height:60px;" /></td>
+      <td>milk</td>
+      <td>Lait</td>
+      <td>200</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/flour.png?raw=true" style="height:60px;" /></td>
+      <td>flour</td>
+      <td>Farine</td>
+      <td>200</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/egg.png?raw=true" style="height:60px;" /></td>
+      <td>egg</td>
+      <td>Oeuf</td>
+      <td>200</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/red_fruit.png?raw=true" style="height:60px;" /></td>
+      <td>red_fruit</td>
+      <td>Fruits rouge</td>
+      <td>200</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/butter.png?raw=true" style="height:60px;" /></td>
+      <td>butter</td>
+      <td>Beure</td>
+      <td>200</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/lettuce_crate.png?raw=true" style="height:60px;" /></td>
+      <td>lettuce_crate</td>
+      <td>Caisse de Laitue</td>
+      <td>4000</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/tomato.png?raw=true" style="height:60px;" /></td>
+      <td>tomato</td>
+      <td>Tomate</td>
+      <td>200</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/slicedtomato.png?raw=true" style="height:60px;" /></td>
+      <td>slicedtomato</td>
+      <td>Tomate Couper</td>
+      <td>100</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/tomato_crate.png?raw=true" style="height:60px;" /></td>
+      <td>tomato_crate</td>
+      <td>Caisse de Tomate</td>
+      <td>4000</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/onion.png?raw=true" style="height:60px;" /></td>
+      <td>onion</td>
+      <td>Oignon</td>
+      <td>50</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/burger_slicedonion.png?raw=true" style="height:60px;" /></td>
+      <td>burger_slicedonion</td>
+      <td>Oignon burger</td>
+      <td>100</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/onion_crate.png?raw=true" style="height:60px;" /></td>
+      <td>onion_crate</td>
+      <td>Caisse d\</td>
+      <td>4000</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/potato_raw.png?raw=true" style="height:60px;" /></td>
+      <td>potato_raw</td>
+      <td>Plante de Pomme de Terre</td>
+      <td>1500</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/potato.png?raw=true" style="height:60px;" /></td>
+      <td>potato</td>
+      <td>Pomme de Terre</td>
+      <td>150</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/slicedpotato.png?raw=true" style="height:60px;" /></td>
+      <td>slicedpotato</td>
+      <td>Pomme de Terre Couper</td>
+      <td>100</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/potato_sack.png?raw=true" style="height:60px;" /></td>
+      <td>potato_sack</td>
+      <td>Sac de Pommes de Terre</td>
+      <td>10000</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/corn_raw.png?raw=true" style="height:60px;" /></td>
+      <td>corn_raw</td>
+      <td>Tige de Maïs</td>
+      <td>1200</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/corn.png?raw=true" style="height:60px;" /></td>
+      <td>corn</td>
+      <td>Maïs</td>
+      <td>250</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/corn_crate.png?raw=true" style="height:60px;" /></td>
+      <td>corn_crate</td>
+      <td>Caisse de Maïs</td>
+      <td>6000</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/broccoli.png?raw=true" style="height:60px;" /></td>
+      <td>broccoli</td>
+      <td>Brocoli</td>
+      <td>300</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/broccoli_crate.png?raw=true" style="height:60px;" /></td>
+      <td>broccoli_crate</td>
+      <td>Caisse de Brocoli</td>
+      <td>5500</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/carrot.png?raw=true" style="height:60px;" /></td>
+      <td>carrot</td>
+      <td>Carotte</td>
+      <td>70</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/carrot_raw.png?raw=true" style="height:60px;" /></td>
+      <td>carrot_raw</td>
+      <td>Botte de Carottes</td>
+      <td>350</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/carrot_crate.png?raw=true" style="height:60px;" /></td>
+      <td>carrot_crate</td>
+      <td>Caisse de Carottes</td>
+      <td>4500</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/cucumber.png?raw=true" style="height:60px;" /></td>
+      <td>cucumber</td>
+      <td>Concombre</td>
+      <td>300</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/cucumber_crate.png?raw=true" style="height:60px;" /></td>
+      <td>cucumber_crate</td>
+      <td>Caisse de Concombres</td>
+      <td>12000</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/cactusfruit.png?raw=true" style="height:60px;" /></td>
+      <td>cactusfruit</td>
+      <td>Fruit de Cactus</td>
+      <td>150</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/cactusfruit_crate.png?raw=true" style="height:60px;" /></td>
+      <td>cactusfruit_crate</td>
+      <td>Caisse de Fruits de Cactus</td>
+      <td>7500</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/mushroom.png?raw=true" style="height:60px;" /></td>
+      <td>mushroom</td>
+      <td>Champignon</td>
+      <td>50</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/mushroom_sack.png?raw=true" style="height:60px;" /></td>
+      <td>mushroom_sack</td>
+      <td>Sac de Champignons</td>
+      <td>5000</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/hotdogsandwich.png?raw=true" style="height:60px;" /></td>
+      <td>hotdogsandwich</td>
+      <td>Hot Dog Classique</td>
+      <td>350</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/hotdog_ketshup.png?raw=true" style="height:60px;" /></td>
+      <td>hotdog_ketshup</td>
+      <td>Hot Dog Ketchup</td>
+      <td>350</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/hotdog_ketshup_fromage.png?raw=true" style="height:60px;" /></td>
+      <td>hotdog_ketshup_fromage</td>
+      <td>Hot Dog Ketchup Fromage</td>
+      <td>380</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/hotdog_ketshup_onion.png?raw=true" style="height:60px;" /></td>
+      <td>hotdog_ketshup_onion</td>
+      <td>Hot Dog Ketchup Oignon</td>
+      <td>380</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/hotdog_ketshup_onion_fromage.png?raw=true" style="height:60px;" /></td>
+      <td>hotdog_ketshup_onion_fromage</td>
+      <td>Hot Dog Ketchup Oignon Fromage</td>
+      <td>420</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/hotdog_ketshup_moutard.png?raw=true" style="height:60px;" /></td>
+      <td>hotdog_ketshup_moutard</td>
+      <td>Hot Dog Ketchup Moutarde</td>
+      <td>380</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/hotdog_ketshup_moutard_onion.png?raw=true" style="height:60px;" /></td>
+      <td>hotdog_ketshup_moutard_onion</td>
+      <td>Hot Dog Ketchup Moutarde Oignon</td>
+      <td>420</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/hotdog_moutard.png?raw=true" style="height:60px;" /></td>
+      <td>hotdog_moutard</td>
+      <td>Hot Dog Moutarde</td>
+      <td>350</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/hotdog_moutard_onion.png?raw=true" style="height:60px;" /></td>
+      <td>hotdog_moutard_onion</td>
+      <td>Hot Dog Moutarde Oignon</td>
+      <td>380</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/hotdog_frites.png?raw=true" style="height:60px;" /></td>
+      <td>hotdog_frites</td>
+      <td>Chihuahua Frites</td>
+      <td>100</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/donut.png?raw=true" style="height:60px;" /></td>
+      <td>donut</td>
+      <td>Donut</td>
+      <td>150</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/donut1.png?raw=true" style="height:60px;" /></td>
+      <td>donut1</td>
+      <td>Donut Glacé</td>
+      <td>150</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/donut2.png?raw=true" style="height:60px;" /></td>
+      <td>donut2</td>
+      <td>Donut au Chocolat</td>
+      <td>150</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/donut3.png?raw=true" style="height:60px;" /></td>
+      <td>donut3</td>
+      <td>Donut au Chocolat et Vermicelles</td>
+      <td>150</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/donut4.png?raw=true" style="height:60px;" /></td>
+      <td>donut4</td>
+      <td>Donut Chocolat Blanc et Noir</td>
+      <td>150</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/donut5.png?raw=true" style="height:60px;" /></td>
+      <td>donut5</td>
+      <td>Donut Fourré au Chocolat</td>
+      <td>150</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/donut6.png?raw=true" style="height:60px;" /></td>
+      <td>donut6</td>
+      <td>Donut Glacé Bleu</td>
+      <td>150</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/donut7.png?raw=true" style="height:60px;" /></td>
+      <td>donut7</td>
+      <td>Donut Glacé Rose</td>
+      <td>150</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/donut8.png?raw=true" style="height:60px;" /></td>
+      <td>donut8</td>
+      <td>Donut Glaçage Rose et Vermicelles</td>
+      <td>150</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/donut9.png?raw=true" style="height:60px;" /></td>
+      <td>donut9</td>
+      <td>Donut Torsadé</td>
+      <td>150</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/donut10.png?raw=true" style="height:60px;" /></td>
+      <td>donut10</td>
+      <td>Donut Nature</td>
+      <td>150</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/donut11.png?raw=true" style="height:60px;" /></td>
+      <td>donut11</td>
+      <td>Donut au Chocolat</td>
+      <td>150</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/donutbox.png?raw=true" style="height:60px;" /></td>
+      <td>donutbox</td>
+      <td>Boite pour contenir 6 Donuts</td>
+      <td>50</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/donutbox2.png?raw=true" style="height:60px;" /></td>
+      <td>donutbox2</td>
+      <td>Boite pour contenir 24 Donuts</td>
+      <td>50</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/pizzabox.png?raw=true" style="height:60px;" /></td>
+      <td>pizzabox</td>
+      <td>Boite à pizza</td>
+      <td>50</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/pizza_ham.png?raw=true" style="height:60px;" /></td>
+      <td>pizza_ham</td>
+      <td>Pizza Peperonie</td>
+      <td>600</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/pizza.png?raw=true" style="height:60px;" /></td>
+      <td>pizza</td>
+      <td>Pizza Peperonie, Poivron, Olive, Tomate</td>
+      <td>600</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/pizza_proscuttio.png?raw=true" style="height:60px;" /></td>
+      <td>pizza_proscuttio</td>
+      <td>Part de Pizza jambon prosciutto</td>
+      <td>100</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/pizza_vegetariana.png?raw=true" style="height:60px;" /></td>
+      <td>pizza_vegetariana</td>
+      <td>Part de Pizza végétarienne</td>
+      <td>100</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/pizza_margherita.png?raw=true" style="height:60px;" /></td>
+      <td>pizza_margherita</td>
+      <td>Part de Pizza margherita</td>
+      <td>100</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/pizza_marinara.png?raw=true" style="height:60px;" /></td>
+      <td>pizza_marinara</td>
+      <td>Part de Pizza marinara</td>
+      <td>100</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/pizza_capricciosa.png?raw=true" style="height:60px;" /></td>
+      <td>pizza_capricciosa</td>
+      <td>Part de Pizza capricciosa</td>
+      <td>100</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/pizza_diavola.png?raw=true" style="height:60px;" /></td>
+      <td>pizza_diavola</td>
+      <td>Part de Pizza diavola</td>
+      <td>100</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/pizza_cannabisvegetariana.png?raw=true" style="height:60px;" /></td>
+      <td>pizza_cannabisvegetariana</td>
+      <td>Part de Pizza cannabisvegetariana</td>
+      <td>100</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/pizza_ham_slice.png?raw=true" style="height:60px;" /></td>
+      <td>pizza_ham_slice</td>
+      <td>Part de Pizza classique</td>
+      <td>100</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/burgerbun.png?raw=true" style="height:60px;" /></td>
+      <td>burgerbun</td>
+      <td>Pain à Burger</td>
+      <td>100</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/burgerbun2.png?raw=true" style="height:60px;" /></td>
+      <td>burgerbun2</td>
+      <td>Pain à Burger avec Sésame</td>
+      <td>100</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/burgerbun3.png?raw=true" style="height:60px;" /></td>
+      <td>burgerbun3</td>
+      <td>Pain à Burger Coupé</td>
+      <td>100</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/hotdog.png?raw=true" style="height:60px;" /></td>
+      <td>hotdog</td>
+      <td>Pain Hotdog</td>
+      <td>50</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/pasta.png?raw=true" style="height:60px;" /></td>
+      <td>pasta</td>
+      <td>Pâtes</td>
+      <td>50</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/sugar.png?raw=true" style="height:60px;" /></td>
+      <td>sugar</td>
+      <td>Sucre</td>
+      <td>50</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/cactus_seed.png?raw=true" style="height:60px;" /></td>
+      <td>cactus_seed</td>
+      <td>Graine de Cactus</td>
+      <td>20</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/carrot_seed.png?raw=true" style="height:60px;" /></td>
+      <td>carrot_seed</td>
+      <td>Graine de Carotte</td>
+      <td>10</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/corn_seed.png?raw=true" style="height:60px;" /></td>
+      <td>corn_seed</td>
+      <td>Graine de Maïs</td>
+      <td>15</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/lettuce_seed.png?raw=true" style="height:60px;" /></td>
+      <td>lettuce_seed</td>
+      <td>Graine de Laitue</td>
+      <td>5</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/maize_seed.png?raw=true" style="height:60px;" /></td>
+      <td>maize_seed</td>
+      <td>Graine de Maïs</td>
+      <td>15</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/pineapple_seed.png?raw=true" style="height:60px;" /></td>
+      <td>pineapple_seed</td>
+      <td>Graine d\</td>
+      <td>25</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/strawberry_seed.png?raw=true" style="height:60px;" /></td>
+      <td>strawberry_seed</td>
+      <td>Graine de Fraise</td>
+      <td>10</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/barley_seed.png?raw=true" style="height:60px;" /></td>
+      <td>barley_seed</td>
+      <td>Graine d\</td>
+      <td>20</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/blueberry_seed.png?raw=true" style="height:60px;" /></td>
+      <td>blueberry_seed</td>
+      <td>Graine de Myrtille</td>
+      <td>15</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/broccoli_seed.png?raw=true" style="height:60px;" /></td>
+      <td>broccoli_seed</td>
+      <td>Graine de Brocoli</td>
+      <td>10</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/potato_seed.png?raw=true" style="height:60px;" /></td>
+      <td>potato_seed</td>
+      <td>Graine de Pomme de Terre</td>
+      <td>50</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/cucumber_seed.png?raw=true" style="height:60px;" /></td>
+      <td>cucumber_seed</td>
+      <td>Graine de Concombre</td>
+      <td>15</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/mushroom_seed.png?raw=true" style="height:60px;" /></td>
+      <td>mushroom_seed</td>
+      <td>Spores de Champignon</td>
+      <td>10</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/tomato_seed.png?raw=true" style="height:60px;" /></td>
+      <td>tomato_seed</td>
+      <td>Graine de Tomate</td>
+      <td>15</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/wheat_seed_can.png?raw=true" style="height:60px;" /></td>
+      <td>wheat_seed_can</td>
+      <td>Contenant de Graines de Blé</td>
+      <td>2500</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/weed_ak47_bud.png?raw=true" style="height:60px;" /></td>
+      <td>weed_ak47_bud</td>
+      <td>Bourgeon AK47</td>
+      <td>10</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/weed_amnesia_bud.png?raw=true" style="height:60px;" /></td>
+      <td>weed_amnesia_bud</td>
+      <td>Bourgeon Amnesia</td>
+      <td>10</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/weed_og_kush_bud.png?raw=true" style="height:60px;" /></td>
+      <td>weed_og_kush_bud</td>
+      <td>Bourgeon OG Kush</td>
+      <td>10</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/weed_purple_haze_bud.png?raw=true" style="height:60px;" /></td>
+      <td>weed_purple_haze_bud</td>
+      <td>Bourgeon Purple Haze</td>
+      <td>10</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/weed_skunk_bud.png?raw=true" style="height:60px;" /></td>
+      <td>weed_skunk_bud</td>
+      <td>Bourgeon Skunk</td>
+      <td>10</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/weed_white_widow_bud.png?raw=true" style="height:60px;" /></td>
+      <td>weed_white_widow_bud</td>
+      <td>Bourgeon White Widow</td>
+      <td>10</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/drug_blue.png?raw=true" style="height:60px;" /></td>
+      <td>drug_blue</td>
+      <td>Gros balotin de Weed 12Kg</td>
+      <td>12000</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/tape_duct.png?raw=true" style="height:60px;" /></td>
+      <td>tape_duct</td>
+      <td>Un bon scotch solid</td>
+      <td>10</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/dirtyneedle.png?raw=true" style="height:60px;" /></td>
+      <td>dirtyneedle</td>
+      <td>Aiguille Sale</td>
+      <td>2</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/ephedrine.png?raw=true" style="height:60px;" /></td>
+      <td>ephedrine</td>
+      <td>Éphédrine</td>
+      <td>5</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/highqualityscales.png?raw=true" style="height:60px;" /></td>
+      <td>highqualityscales</td>
+      <td>Balance de Haute Qualité</td>
+      <td>200</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/lsdtab.png?raw=true" style="height:60px;" /></td>
+      <td>lsdtab</td>
+      <td>Tab de LSD</td>
+      <td>1</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/meth_tray.png?raw=true" style="height:60px;" /></td>
+      <td>meth_tray</td>
+      <td>Plateau de Meth</td>
+      <td>500</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/oxy.png?raw=true" style="height:60px;" /></td>
+      <td>oxy</td>
+      <td>Oxycodone</td>
+      <td>5</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/weed_bag.png?raw=true" style="height:60px;" /></td>
+      <td>weed_bag</td>
+      <td>Petit sac mystérieux</td>
+      <td>100</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/cocaineleaf.png?raw=true" style="height:60px;" /></td>
+      <td>cocaineleaf</td>
+      <td>Feuille de Cocaïne</td>
+      <td>5</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/coke_brick.png?raw=true" style="height:60px;" /></td>
+      <td>coke_brick</td>
+      <td>Brique de Cocaïne</td>
+      <td>1000</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/cocaine_bag.png?raw=true" style="height:60px;" /></td>
+      <td>cocaine_bag</td>
+      <td>Petit sac mystérieux</td>
+      <td>100</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/Casimodo/studio-roleplay-documentation/blob/main/img_inventory/hacking_device.png?raw=true" style="height:60px;" /></td>
+      <td>hacking_device</td>
+      <td>Hacking Device</td>
+      <td>150</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+</body>
+</html>
