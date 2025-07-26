@@ -5,7 +5,7 @@ Les items servent soit à être utilisés directement ou alors dans des crafts o
 
 ## Petit moteur d'item en local
 Pour voir et aussi consulter les items vous faudra télécharger et ouvrir avec un simple navigateur ce fichier. Un moteur de recherche est intégré
-[Téléchager](https://raw.githubusercontent.com/Casimodo/studio-roleplay-documentation/refs/heads/main/inventaire_items.html)
+[Téléchager](https://raw.githubusercontent.com/Casimodo/studio-roleplay-documentation/refs/heads/main/inventaire_items.html) (Cliquer pour ouvrir, puis click droit télécharger, puis ouvrir avec votre navigateur favoris)
 
 ## Utilisations
 
