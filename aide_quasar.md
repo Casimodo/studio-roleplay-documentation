@@ -9,7 +9,13 @@ Système de chez Quasar
 ## Les commands de base
 
 ### Vehicleshop
-
+**Attention:** *requis job "tailor"
 ```
 /vehicleshop
+```
+
+### Creation de nouveau garage
+**Attention:** *requis job "dynasty"
+```
+/creategarage
 ```
