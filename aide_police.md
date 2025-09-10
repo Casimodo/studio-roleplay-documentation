@@ -57,4 +57,24 @@ Ci-dessous une grosse exeplication de tout le fonctionnement de la tablette
 /911ems [mon message]
 ```
 
+## Autre système ajouté pour plus de sérious RP
+
+J'ai ajouté d'autre mode essentiel qui sont :
+- [job-center]/[police_ems]/lib_police (permet d'avoir un vrai système de tazer avec des cartouches qui sont l'item "taser_cartridge" donc à avoir sur soit maxi 2 dans la config chaque cartouche fait 2 coups)
+- [job-center]/[police_ems]/lvc (permet d'avoir un vrai système 2 tons mutli qui est configurable directement en jeux dans les config de touche FiveM, permet plein de solution)
+- [others]/[mecaniquedejeux]/[imprimante_document]/nkt-printer/ (permet si vous avez l'item "paper" d'imprimer n'importe quel image que cela créé un item de cette image ouvrable en l'utilisant par exemple créer un papier officiel de licence de transport et l'imprimer pour le donner au joueur)
+- [others]/[mecaniquedejeux]/[divers]/randol_notes/ (permet en achetant l'item "notepad" d'avoir un carnet de note utilisable aussi en jeux les note peuvent être détaché à la mode post it, ils peuvent être officiellement signé et donc identifier pour connaitre l'identité du créateur de la note ou pas)
+- [others]/[mecaniquedejeux]/ts_Trafficlights (permet d'avoir de vrai feux rouge synchronisé, je l'es ai configuré à 3 à 5s max donc les feux peuvent être réellement respecté par les joueurs et donc ammendable si pas respecté car synchronisé entre joueur)
+- [others]/[com]/sf_camerasecurity (permet d'avoir par un vendeur différents type de caméra, possible caméra espion à poser, les possibilités son différentes si Police, EMS, Civil. Elle peuvent être utilisé RP parlant car en cas de record de joueur ont voit la date et info divers sur les images de la tablette associé)
+
+### Imprimante utilisation
+
+  1. Avoir l'item "paper"
+  2. Aller sur une imprimante en regardant avec le 3eme oeil
+  3. Remplir les champs, le dernier champs est l'url de l'image qui est hebergé quelques part
+  4. L'item "paper" ce supprime et vous donne un item "doc" avec tout renseigné dessus
+  5. Utilise ce doc pour ouvrir l'image en jeux, cette item est transférable entre joueur
+
+
+
 
