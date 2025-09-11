@@ -25,9 +25,6 @@ Ci-dessous une grosse exeplication de tout le fonctionnement de la tablette
   - Refuser alerte mini dispatch    => none            =>    I             =>    none
   - Ouvrir mini dispatch            => none            =>    U             =>    none
 
-### K9
-
-  - Ouvrir le menu                  => /k9             =>    K             =>    none
 
 ### Autre
 
@@ -43,7 +40,32 @@ Ci-dessous une grosse exeplication de tout le fonctionnement de la tablette
   - Parler à la radio               => none            =>    LMENU         =>    none
   - Changer animation radio         => /animradio      =>    none          =>    none
   - Parler mégaphone                => none            =>    Y             =>    none
-  - Caméra Helico (passagé)         => none            =>    E             =>    none
+  - Caméra Helico (conducteur)      => none            =>    E             =>    none
+
+### Fonctionnement du Radars (attention reste après une tempête)
+
+  - Command : /radars
+
+### Fonctionnement du tazer
+
+*Le tazer est modifié pour fonctionner avec des cartouches, il permet de faire 2 tires*
+Nom des items
+  - Arme : WEAPON_STUNGUN
+  - Cartouche : taser_cartridge
+
+### K9 (autre script ajouté)
+
+Utiliser le 3eme oeil sur les personnes ou véhicule pour le fouiller
+
+  - Ouvrir le menu                  => /k9menu         =>    F10           =>    none
+  - Pour vous suivre                => none            =>    F    
+
+  *Lorsque vous visez une personne pour les actions ci-dessous*
+  - recherche sur individue         => none            =>    E    
+  - attaquer                        => none            =>    G    
+  
+  *Pour la recherche vous pouvez aussi utiliser le 3eme oeil sur les individues et les véhicules
+  ***ATTENTION:*** Pour qu'il puisse trouver les drogs ou autres qui sont des items il faut les référencer dans le fichier de config au niveau de *SearchableItems*
 
 ### Alert
 
