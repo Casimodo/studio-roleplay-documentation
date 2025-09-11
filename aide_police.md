@@ -55,6 +55,8 @@ Nom des items
 
 ### K9 (autre script ajouté)
 
+*Pour sortir le chien, être LSPD Grade mini 3. Puis regarder la niche avec le 3eme oeil*
+
 Utiliser le 3eme oeil sur les personnes ou véhicule pour le fouiller
 
   - Ouvrir le menu                  => /k9menu         =>    F10           =>    none
