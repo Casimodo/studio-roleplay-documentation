@@ -1,7 +1,10 @@
 # Aide sociétés
 Les sociétés sont géré directement par le staff (autorisé en config) en utilisant la ressources "job-creator".
 
-La commande à faire est "/jobcreator"
+```lua
+/jobcreator         -- Permet de gérer les job et société
+/crafting_creator   -- Permet de gérer le système de craft
+```
 
 
 ## Attentions

@@ -27,6 +27,8 @@ Gestion des films, attantion en cas d'ajout bien remplir tous les champs surtout
 
 **Attention:** *requis job "tailor"
 ```lua
-/vehicleshop    -- Permet de grérer les shop de vendeur de véhicule (requis : job "tailor")
-/creategarage   -- Permet de créer / gérer les garages public, privé (requis : job "dynasty")
+/vehicleshop        -- Permet de grérer les shop de vendeur de véhicule (requis : job "tailor")
+/opendealership     -- Permet de grérer les vente d'employé de véhicule (requis : job "tailor")
+/creategarage       -- Permet de créer / gérer les garages public, privé (requis : job "dynasty")
+/crafting_creator   -- Permet de gérer le système de craft
 ```

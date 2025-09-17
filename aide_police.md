@@ -81,6 +81,17 @@ Utiliser le 3eme oeil sur les personnes ou véhicule pour le fouiller
 /911ems [mon message]
 ```
 
+## Système de radio indépendant (radio classique à plusieurs couleur aussi achetable dans les 24/7)
+
+**Les fréquences sécurisées sont :**
+
+*Seule les joueurs ayant le role peut accéder à la fréquence, elle sont sécurisée*
+
+- 500 : EMS, Police, Staff (fréquence commune)
+- 506 : Police
+- 483 : EMS
+- 666 : Staff 
+
 ## Autre système ajouté pour plus de sérious RP
 
 J'ai ajouté d'autre mode essentiel qui sont :
